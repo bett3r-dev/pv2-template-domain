@@ -18,6 +18,6 @@ export const StockDecreased: Event<number> = () => ({
   schema: joi.number()
 })
 
-export const StockIncreased: Event<number> = () => ({
+export const StockRestored: Event<number> = () => ({
   schema: joi.number()
 })

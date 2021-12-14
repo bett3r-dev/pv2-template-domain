@@ -24,7 +24,7 @@ export const DecreaseStock: Command<{cartId:string, quantity:number}> = () => ({
   })
 })
 
-export const IncreaseStock: Command<{cartId:string, quantity:number}> = () => ({
+export const RestoreStock: Command<{cartId:string, quantity:number}> = () => ({
   schema: joi.object().keys({
     cartId: joi.string(),
     quantity: joi.number()
