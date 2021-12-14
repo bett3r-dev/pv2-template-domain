@@ -1,5 +1,5 @@
 {
-  "name": "@bett3r-dev/template",
+  "name": "@bett3r-dev/pv2-template-domain",
   "version": "0.0.1",
   "main": "build/index.js",
   "types": "build/index.d.ts",
