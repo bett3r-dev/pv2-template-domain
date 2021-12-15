@@ -24,5 +24,3 @@ export const CartModelSchema = joi.object<CartModel>().keys({
   products: joi.object().pattern(joi.string().uuid(), CartProductSchema),
   isClosed: joi.boolean()
 })
-
-JSON.stringify(CartModelSchema.describe(),null, 4);//?
