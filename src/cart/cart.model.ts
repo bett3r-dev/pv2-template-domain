@@ -20,9 +20,9 @@ export type CartModel = Partial<{
 }>;
 
 export const CartModelSchema = joi.object<CartModel>().keys({
-  userId: joi.string().uuid(), 
+  userId: joi.string().uuid(),
   products: joi.object().pattern(joi.string().uuid(), CartProductSchema),
   isClosed: joi.boolean()
 })
 
-JSON.stringify(CartModelSchema.describe(),null, 4);//?
+// JSON.stringify(CartModelSchema.describe(),null, 4);//?
