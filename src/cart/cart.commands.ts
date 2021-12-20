@@ -1,16 +1,30 @@
 import { Command } from "@bett3r-dev/server-core";
 import joi from 'joi';
-import { CartEvents } from "src/domain/build/cart";
+import {CartEvents }from "./index";
 import { CartProduct, CartProductSchema, CartErrors } from ".";
 
 export const CreateUserCart: Command<null> = () => ({
   schema: null,
-  isPublic: true
+  isPublic: true,
+  events:[
+    CartEvents.UserCartCreated
+  ],
+  errors: [
+    CartErrors.CartAlreadyExist
+  ]
 })
 
 export const AddProduct: Command<CartProduct> = () => ({
   schema: CartProductSchema,
-  isPublic: true
+  isPublic: true,
+  events:[
+    CartEvents.ProductAdded
+  ],
+  errors: [
+    CartErrors.ProductAlreadyInCart,
+    CartErrors.ProductDoesNotExist,
+    CartErrors.ProductOutOfStock
+  ]
 })
 
 export const UpdateQuantity: Command<{productId:string, quantity:number}> = () => ({
@@ -31,9 +45,20 @@ export const UpdateQuantity: Command<{productId:string, quantity:number}> = () =
 
 export const RemoveProduct: Command<string> = () => ({
   schema: joi.string(),
-  isPublic: true
+  isPublic: true,
+  events:[
+    CartEvents.ProductRemoved
+  ],
+  errors: [
+    CartErrors.ProductNotInCart
+  ]
 })
 
 export const CloseCart: Command<null> = () => ({
-  schema: null
+  schema: null,
+  events:[
+    CartEvents.CartClosed
+  ],
+  errors: [
+  ]
 })

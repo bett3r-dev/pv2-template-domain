@@ -8,10 +8,10 @@ export type CartProduct = Partial<{
 }>
 
 export const CartProductSchema = joi.object().keys({
-  productId: joi.string(),
+  productId: joi.string().description('Es el uuid del producto'),
   productInfo: ProductModelBaseSchema,
   quantity: joi.number().integer()
-})
+}).description('Es un producto del carrito');
 
 export type CartModel = Partial<{
   userId: string;
@@ -20,7 +20,7 @@ export type CartModel = Partial<{
 }>;
 
 export const CartModelSchema = joi.object<CartModel>().keys({
-  userId: joi.string().uuid(),
+  userId: joi.string().uuid().description('Es un userId'),
   products: joi.object().pattern(joi.string().uuid(), CartProductSchema),
   isClosed: joi.boolean()
-})
+}).description('Es un carrito');
