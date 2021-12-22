@@ -228,7 +228,7 @@
   resolved "https://npm.pkg.github.com/download/@bett3r-dev/server-core/0.0.2/a2e09781b7cb41e56722783ec86df0649a1ea954ed296aac0fdea4fede55d7d0#618f06e01b44167abb85384138ceb93e9bfb42fa"
   integrity sha512-Ucr3FBd/WbHK7rFmp62I4lRVP8AHXklaiisVtQXmdJtQAR82ums7TV2Ib3Csy8WZw7UerAAGiDYtU+XKFcKs4w==
   dependencies:
-    "@bett3r-dev/server-utils" "^0.0.2"
+    "@bett3r-dev/server-utils" "^1.1.0"
     crocks "^0.12.4"
     glob "^7.1.6"
     graphql "^15.5.1"
