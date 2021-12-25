@@ -1,5 +1,5 @@
-import joi from 'joi';
 import { AppError } from '@bett3r-dev/server-core';
+import joi from 'joi';
 
 export const ProductDoesNotExist: AppError<string[]> = () => ({
   type: 'NotFoundError',
