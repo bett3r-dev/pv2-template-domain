@@ -5,10 +5,9 @@
   "types": "build/index.d.ts",
   "license": "UNLICENSED",
   "scripts": {
-    "clean": "git clean -fXd -e \\!node_modules -e \\!node_modules/**/*",
+    "clean": "git clean -fXd -e \\!node_modules -e \\!node_modules/**/* -e \\!config/*",
     "prebuild": "yarn clean",
-    "build": "tsc -p tsconfig.build.json",
-    "build:local": "tsc -p tsconfig.local.json",
+    "build": "tsc -p tsconfig.local.json",
     "start": "ts-node src/index.ts",
     "test": "NODE_ENV=test nyc ts-mocha \"src/{,**/}*.test.ts\" --exit"
   },
