@@ -1,7 +1,6 @@
 import { Event } from "@bett3r-dev/server-core";
 import joi from 'joi';
-import { PaymentModel, PaymentModelSchema } from ".";
-import { CartModel, CartModelSchema } from "../cart";
+import { CartModel } from "../cart";
 import { CartProductSchema } from '../cart/cart.model';
 
 export const PaymentStarted: Event<{ cartId: string, cart:Pick<CartModel, "products">, amount: number}> = () => ({
