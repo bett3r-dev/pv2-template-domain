@@ -5,7 +5,7 @@
   "types": "build/index.d.ts",
   "license": "UNLICENSED",
   "scripts": {
-    "clean": "git clean -fXd -e \\!node_modules -e \\!node_modules/**/* -e \\!config/*",
+    "clean": "rm -rf build",
     "prebuild": "yarn clean",
     "build": "tsc -p tsconfig.local.json",
     "start": "ts-node src/index.ts",
