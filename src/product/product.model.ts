@@ -6,8 +6,10 @@ export type ProductBaseModel = Partial<{
   name: string;
   price: number;
 }>;
+
 export type ProductModel = ProductBaseModel & Partial<{
   quantity: number;
+  image: string;
 }>
 
 export const ProductModelBaseSchema = joi.object<ProductBaseModel>().keys({
@@ -18,5 +20,11 @@ export const ProductModelBaseSchema = joi.object<ProductBaseModel>().keys({
 })
 
 export const ProductModelSchema = ProductModelBaseSchema.concat(joi.object<ProductModel>().keys({
-  quantity: joi.number().integer()
+  quantity: joi.number().integer(),
+  image: joi.string().optional()
+})).preferences({presence:'required'})
+
+export const CreateProductCommandSchema = ProductModelBaseSchema.concat(joi.object<ProductModel>().keys({
+  quantity: joi.number().integer(),
+  image: joi.binary().optional()
 })).preferences({presence:'required'})

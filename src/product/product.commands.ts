@@ -1,11 +1,12 @@
 import { Command } from "@bett3r-dev/server-core";
 import joi from 'joi';
-import { ProductModel, ProductModelSchema } from "./product.model";
+import { CreateProductCommandSchema, ProductModel, ProductModelSchema } from "./product.model";
 import { ProductEvents, ProductErrors } from "./index"
 
 export const CreateProduct: Command<ProductModel> = () => ({
-  schema: ProductModelSchema,
+  schema: CreateProductCommandSchema,
   isPublic: true,
+  multipartProperties:['image'],
   events:[
     ProductEvents.ProductCreated
   ],
