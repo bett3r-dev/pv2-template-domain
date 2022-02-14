@@ -3,10 +3,11 @@ import joi from 'joi';
 import { CartModel } from "../cart";
 import { CartProductSchema } from '../cart/cart.model';
 
-export const PaymentStarted: Event<{ cartId: string, cart:Pick<CartModel, "products">, amount: number}> = () => ({
+export const PaymentStarted: Event<{ cartId: string, cart:Pick<CartModel, "products" | "userId">, amount: number}> = () => ({
   schema: joi.object().keys({
     cartId: joi.string().uuid(),
     cart: joi.object().keys({
+      userId: joi.string().uuid(),
       products: joi.object().pattern(
         joi.string(),
         CartProductSchema

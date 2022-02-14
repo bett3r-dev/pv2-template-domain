@@ -2,8 +2,8 @@ import { Event } from "@bett3r-dev/server-core";
 import joi from 'joi';
 import { CartModel, CartModelSchema, CartProduct, CartProductSchema } from ".";
 
-export const UserCartCreated: Event<null> = () => ({
-  schema: null
+export const UserCartCreated: Event<{userId: string}> = () => ({
+  schema: joi.object().keys({userId: joi.string().uuid()})
 })
 
 export const ProductAdded: Event<CartProduct> = () => ({

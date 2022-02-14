@@ -2,11 +2,20 @@ import {Command} from '@bett3r-dev/server-core'
 import joi from 'joi'
 import { PaymentEvents, PaymentModel, PaymentModelSchema } from '.'
 
-export const StartPayment: Command<null> = () => ({
-  schema: null,
+export const StartPayment: Command<{cartId: string}> = () => ({
+  schema: joi.object().keys({cartId: joi.string().uuid()}),
   isPublic: true,
   events:[
     PaymentEvents.PaymentStarted
+  ],
+})
+
+export const ExternalGatewayWebhook: Command<{paymentId:string, success: boolean}> = () => ({
+  schema: joi.object().keys({paymentId: joi.string(), success: joi.boolean()}),
+  isPublic: true,
+  events:[
+    PaymentEvents.PaymentApproved,
+    PaymentEvents.PaymentRejected
   ],
 })
 

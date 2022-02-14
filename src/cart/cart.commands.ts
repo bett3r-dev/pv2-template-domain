@@ -3,14 +3,14 @@ import joi from 'joi';
 import {CartEvents }from "./index";
 import { CartProduct, CartProductSchema, CartErrors } from ".";
 
-export const CreateUserCart: Command<null> = () => ({
-  schema: null,
+export const CreateUserCart: Command<{userId: string}> = () => ({
+  schema: joi.object().keys({userId: joi.string().uuid().required()}),
   isPublic: true,
   events:[
     CartEvents.UserCartCreated
   ],
   errors: [
-    CartErrors.CartAlreadyExist
+    CartErrors.CartAlreadyExist,
   ]
 })
 
