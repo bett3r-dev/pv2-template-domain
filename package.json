@@ -1,6 +1,6 @@
 {
   "name": "@bett3r-dev/pv2-example-domain",
-  "version": "2.1.2",
+  "version": "2.2.0",
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "license": "UNLICENSED",
@@ -28,8 +28,8 @@
     "typescript": "^4.4.3"
   },
   "dependencies": {
-    "@bett3r-dev/crocks": "^2.1.2",
-    "@bett3r-dev/server-core": "^2.1.2",
+    "@bett3r-dev/crocks": "^2.2.0",
+    "@bett3r-dev/server-core": "^2.2.0",
     "joi": "^17.5.0"
   }
 }
