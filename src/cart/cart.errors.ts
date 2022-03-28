@@ -40,3 +40,7 @@ export const EmptyCart: AppError<null> = () => ({
   type: 'NotAcceptableError',
   schema: null
 })
+export const UserDoesNotExist: AppError<string[]> = () => ({
+  type: 'NotFoundError',
+  schema: joi.array().items(joi.string())
+})

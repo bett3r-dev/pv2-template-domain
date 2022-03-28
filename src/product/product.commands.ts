@@ -1,6 +1,6 @@
 import { Command } from "@bett3r-dev/server-core";
 import joi from 'joi';
-import { CreateProductCommandSchema, ProductModel, ProductModelSchema } from "./product.model";
+import { ProductModel, ProductModelSchema, CreateProductCommandSchema } from "./product.types";
 import { ProductEvents, ProductErrors } from "./index"
 
 export const CreateProduct: Command<ProductModel> = () => ({

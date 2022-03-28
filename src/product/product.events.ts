@@ -1,6 +1,6 @@
 import { Event } from "@bett3r-dev/server-core";
 import joi from 'joi';
-import { ProductModel, ProductModelSchema } from "./product.model";
+import { ProductModel, ProductModelSchema } from "./product.types";
 
 export const ProductCreated: Event<ProductModel> = () => ({
   schema: ProductModelSchema

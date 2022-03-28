@@ -1,5 +1,5 @@
 import joi from "joi";
-import { ProductBaseModel, ProductModelBaseSchema } from "../product/product.model";
+import { ProductBaseModel, ProductModelBaseSchema } from "../product/product.types";
 
 export type CartProduct = Partial<{
   productId: string,
