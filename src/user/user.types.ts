@@ -9,7 +9,7 @@ export type UserModel = {
 }
 
 export const UserModelSchema = joi.object().keys({
-  id: joi.string().uuid(),
+  id: joi.string(),
   name: joi.string(),
   lastName: joi.string(),
   mail: joi.string().email(),
